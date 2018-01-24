@@ -42,10 +42,16 @@ def validate_user():
         if(password != verifypassword):
             verifypassword_error="Password mismatch"
 
-        if len(email) > 20 or len(email) < 3 or " " in email or "." not in email or "@" not in email:
+        if email != "" and len(email) > 20 or len(email) < 3:
         
             email_error = 'Invalid email'
             email = email
+        
+        elif email != and ("." not in email or "@" not in email):
+            
+            email_error = 'Invalid email'
+            email = email
+        
 
 
         if not username_error and not password_error and not verifypassword_error:
